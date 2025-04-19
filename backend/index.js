@@ -8,10 +8,17 @@ const router = require('./routes/index.js');
 
 
 const app = express();
+
+
 app.use(cors({
     origin: process.env.FRONT_END_URL,
-    credentials: true
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.options('*', cors());
+
 app.use(express.json());
 app.use(cookieParser());
 
@@ -22,8 +29,8 @@ const PORT = process.env.PORT || 8080;
 
 module.exports = async (req, res) => {
     if (!app.dbConnected) {
-      await connectDB();
-      app.dbConnected = true;
+        await connectDB();
+        app.dbConnected = true;
     }
     return app(req, res);
-  };
+};
