@@ -104,7 +104,7 @@ const Header = () => {
                         <Link to={'/admin-panel/all-product'} className='whitespace-nowrap hover:bg-sky-200 p-2 ' onClick={() => setMenuDisplay(preve => !preve)}>Admin Panel</Link>
                       )
                     }
-                      <Link to={"/order"} className='whitespace-nowrap hover:bg-sky-200 p-2 ' onClick={() => setMenuDisplay(preve => !preve)}>Giỏ Hàng</Link>
+                      <Link to={"/order"} className='whitespace-nowrap hover:bg-sky-200 p-2 ' onClick={() => setMenuDisplay(preve => !preve)}>Sản phẩm đã mua</Link>
                     </nav>
                   </div>
 
